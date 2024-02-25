@@ -1,10 +1,19 @@
 import { StatusBar } from "expo-status-bar";
-import { FlatList, StyleSheet, View } from "react-native";
+import { ActivityIndicator, FlatList, StyleSheet, View } from "react-native";
 import DayListItem from "./src/components/DayListItem";
+import { useFonts, Inter_900Black } from "@expo-google-fonts/inter";
 
 const days = [...Array(24)].map((_value, index) => index + 1);
 
 export default function App() {
+  const [fontsLoaded, fontError] = useFonts({
+    Inter: Inter_900Black,
+  });
+
+  if (!fontsLoaded && !fontError) {
+    return <ActivityIndicator />;
+  }
+
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
