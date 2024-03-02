@@ -10,6 +10,7 @@ import {
 } from "react-native-gesture-handler";
 import Animated, {
   FadeIn,
+  FadeInUp,
   FadeOut,
   SlideInRight,
   SlideOutLeft,
@@ -75,8 +76,9 @@ const OnboardingScreen = () => {
 
       <View style={styles.stepIndicatorContainer}>
         {onboardingSteps.map((step, index) => (
-          <View
+          <Animated.View
             key={index + step.title}
+            entering={FadeInUp.delay(50)}
             style={[
               styles.stepIndicator,
               { backgroundColor: index === screenIndex ? "#CEF202" : "grey" },
@@ -152,7 +154,6 @@ const styles = StyleSheet.create({
   stepIndicator: {
     flex: 1,
     height: 3,
-    backgroundColor: "grey",
     borderRadius: 10,
   },
 
