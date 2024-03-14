@@ -6,7 +6,10 @@ const DayDetailScreen = () => {
   return (
     <View>
       <Stack.Screen options={{ title: "Day 2 : Onboarding" }} />
-      <Text>Day Details Screen</Text>
+
+      <Text style={{ fontFamily: "Amatic", fontSize: 100 }}>
+        Day 2 Detail Screen
+      </Text>
 
       <Link href={"/day2/onboarding"} asChild>
         <Button title="Go to onboarding" />
