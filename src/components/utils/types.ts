@@ -20,3 +20,12 @@ export interface CustomMarkerProps {
   apartment: ApartmentProps;
   onPress?: () => void;
 }
+
+export type MessageType = {
+  role: "system" | "user" | "assistant";
+  content: string;
+};
+
+export interface MessageProps {
+  message: MessageType;
+}
